@@ -149,7 +149,7 @@
       
         <hr>
 <p>有时候在布局的时候，会遇到左边需要自适应，右边是固定宽度的情况。这时候只需要用到负的左外边距就可以实现。</p>
-<p>效果如下：<br><img src="/img/20161227/1.png" alt="impression drawing"><br><img src="/img/20161227/2.png" alt="impression drawing"></p>
+<p>效果如下：<br><img src="/img/20161227/1.png" alt="impression drawing"><br><img src="/img/20161227/7.png" alt="impression drawing"></p>
 <p><strong> 下面详细讲解：</strong> </p>
 <p>1、 首先写出需要自适应的左右两个元素块，main是需要自适应的主要内容区域，content是内容区，aside-right是固定宽度的右边侧边栏。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;main class=<span class="string">"main"</span>&gt;</div><div class="line">    &lt;div class=<span class="string">"content"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/main&gt;</div><div class="line">&lt;aside class=<span class="string">"aside-right"</span>&gt;&lt;/aside&gt;</div></pre></td></tr></table></figure></p>
 <p>2、 其次将主要内容区域宽度设置为100%，并向左浮动。（高度和背景色是为了方便看效果，下同）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.main&#123;</div><div class="line">    width: 100%;</div><div class="line">    <span class="built_in">float</span>: left;</div><div class="line">    height: 200px;</div><div class="line">    background-color: <span class="comment">#A6D8FF;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
