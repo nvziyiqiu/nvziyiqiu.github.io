@@ -60,9 +60,12 @@
     			
             
     			
+    			<a data-idx="1" q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
+    			
+    			
             
     			
-    			<a data-idx="1" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a data-idx="2" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
     			
             
@@ -141,13 +144,24 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       	<div class="article-meta">
-	      	<a href="/2016/12/26/flower/" class="archive-article-date">
-  	<time datetime="2016-12-26T01:30:07.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-26</time>
+	      	<a href="/2016/12/27/两列布局左边自适应/" class="archive-article-date">
+  	<time datetime="2016-12-27T03:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-27</time>
 </a>
         </div>
     	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/12/27/两列布局左边自适应/">两列布局左边自适应</a>
+    </h1>
+  
+
         <div class="article-info info-on-right">
           
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+	</div>
+
           
 
         </div>
@@ -212,6 +226,38 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">收集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">诗</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">花</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">电影</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">大学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">旧事</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -257,11 +303,27 @@
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>小罗力</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>如何搭建hexo</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">醒时只愿朝花笑，&lt;br&gt;醉时只愿对花眠。</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一只萌哒哒的文艺前端dog。</div>
   	  	
     	</section>
     

@@ -129,6 +129,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-两列布局左边自适应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/27/两列布局左边自适应/">两列布局左边自适应</a>
+    </h1>
+  
+
+        <a href="/2016/12/27/两列布局左边自适应/" class="archive-article-date">
+  	<time datetime="2016-12-27T03:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-27</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>有时候在布局的时候，会遇到左边需要自适应，右边是固定宽度的情况。这时候只需要用到负的左外边距就可以实现。</p>
+<p>效果如下：<br><img src="/img/20161227/1.png" alt="impression drawing"><br><img src="/img/20161227/2.png" alt="impression drawing"></p>
+<p><strong> 下面详细讲解：</strong> </p>
+<p>1、 首先写出需要自适应的左右两个元素块，main是需要自适应的主要内容区域，content是内容区，aside-right是固定宽度的右边侧边栏。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;main class=<span class="string">"main"</span>&gt;</div><div class="line">    &lt;div class=<span class="string">"content"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;/main&gt;</div><div class="line">&lt;aside class=<span class="string">"aside-right"</span>&gt;&lt;/aside&gt;</div></pre></td></tr></table></figure></p>
+<p>2、 其次将主要内容区域宽度设置为100%，并向左浮动。（高度和背景色是为了方便看效果，下同）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.main&#123;</div><div class="line">    width: 100%;</div><div class="line">    <span class="built_in">float</span>: left;</div><div class="line">    height: 200px;</div><div class="line">    background-color: <span class="comment">#A6D8FF;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/img/20161227/3.png" alt="impression drawing"></p>
+<p>3、 然后设置右边侧边栏的宽度和左外边距为负的该元素宽度值（这里侧边栏宽度为300px,所以margin-left设置为-300px），然后向左浮动，这样右边侧边栏就浮动到左边内容区的右边了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.aside-right&#123;</div><div class="line">    width: 300px;</div><div class="line">    height: 200px;</div><div class="line">    margin-left: -300px;</div><div class="line">    background-color: <span class="comment">#BFBFBF;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/img/20161227/4.png" alt="impression drawing"><br><img src="/img/20161227/1.png" alt="impression drawing"></p>
+<p>4、最后为了左边内容区的内容不被右边侧边栏遮挡，设置大于等于右边侧边栏宽度的右外边距。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.main .content&#123;  </div><div class="line">    margin-right: -320px;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="/img/20161227/5.png" alt="impression drawing"><br><img src="/img/20161227/6.png" alt="impression drawing"></p>
+<p>附上源代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head lang=<span class="string">"en"</span>&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .main&#123;</div><div class="line">            width: 100%;</div><div class="line">            <span class="built_in">float</span>: left;</div><div class="line">            height: 200px;</div><div class="line">            background-color: <span class="comment">#A6D8FF;</span></div><div class="line">        &#125;</div><div class="line">        .aside-right&#123;</div><div class="line">            width: 300px;</div><div class="line">            <span class="built_in">float</span>: left;</div><div class="line">            margin-left: -300px;</div><div class="line">            height: 200px;</div><div class="line">            background-color: <span class="comment">#BFBFBF;</span></div><div class="line">        &#125;</div><div class="line">        .main .content&#123;</div><div class="line">            margin-right: 320px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;main class=<span class="string">"main"</span>&gt;</div><div class="line">        &lt;div class=<span class="string">"content"</span>&gt;&lt;/div&gt;</div><div class="line">    &lt;/main&gt;</div><div class="line">    &lt;aside class=<span class="string">"aside-right"</span>&gt;&lt;/aside&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/27/两列布局左边自适应/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-初见" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -605,6 +670,14 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">花</a>
               </li>
              
@@ -613,11 +686,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">旧事</a>
+                <a href="javascript:void(0)">大学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">大学</a>
+                <a href="javascript:void(0)">旧事</a>
               </li>
             
             <div class="clearfix"></div>
@@ -684,7 +757,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">醒时只愿朝花笑，&lt;br&gt;醉时只愿对花眠。</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一只萌哒哒的文艺前端dog。</div>
   	  	
     	</section>
     
